@@ -352,7 +352,7 @@ section {
   }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 430px) {
   .menu-icon-action {
     display: block;
   }
