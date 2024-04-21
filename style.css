@@ -1,0 +1,272 @@
+/*font-family: "IBM Plex Mono", monospace;
+  font-family: "Roboto Mono", monospace;*/
+
+/* NORMALIZACION */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /*Esto mantiene el ancho y el alto a pesar del paddin y border*/
+  font-family: "IBM Plex Mono", monospace;
+  list-style: none; /*¨Quitar los puntos de decoracion de las listas*/
+  text-decoration: none; /*Esto quita el subrayado de los enlaces*/
+  color: white;
+}
+body {
+  background-color: black; /*TODO: Borrar cuando tengamos el fondo final*/
+}
+header {
+  position: fixed; /*Esto hace que el header quede fijo en la parte superior*/
+  right: 0;
+  top: 0;
+  z-index: 100; /*Esto hace que el header se muestre por encima*/
+  width: 100%;
+  display: flex; /*Esto hace que los elementos se pongan en linea*/
+  align-items: center; /*Centra verticalmente*/
+  justify-content: space-between; /*Hace que los elementos se separen*/
+  padding: 15px 3%;
+  background-color: transparent;
+}
+.logo {
+  font-size: 30px;
+  font-weight: 800; /*Este es el grueso de las letras*/
+}
+.navlist {
+  display: flex; /*Esto srive para que los elementos de la lista UL se pongan en linea*/
+}
+.navlist a {
+  margin-left: 60px; /*Esto hace que se separen las palabras a la izquierda ya que ya tenemos margen a la derecha*/
+  font-size: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid transparent; /*Este es un subrayado transparente*/
+  transition: all 0.5s ease 0s; /*Esto es para transicionar todas las caracteristicas del .navlist a */
+}
+
+.navlist a:hover {
+  border-bottom: 2px solid white; /*Este es un subrayado blanco que aparecera cuando estamos encima con el mouse*/
+}
+
+#menu-icon {
+  display: none; /*Esto esta en none para que solo se vea cuando la pagina este colapsada de forma horizontal*/
+}
+
+#menu-icon {
+  font-size: 35px;
+  z-index: 101; /* Esto es para que este sobre el header*/
+  cursor: pointer; /* Esto es para que aparezca la manito*/
+}
+
+#menu-toggle {
+  display: none; /* Esto es para que nunca se vea el checkbox*/
+}
+.menu-icon-action {
+  display: none; /*Esto es para que no se le pueda hacer click*/
+}
+
+.hero {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    245.59deg,
+    #4e3131 0%,
+    #703838 25%,
+    #131313 75%
+  ); /*Fondo en degradado segun el porcentaje de fade*/
+  position: relative; /*Esto es para que sea relativo el contenedor, lo que nos permite usar top, bottom, left y right*/
+  display: grid; /*Esto es para que el hero se pueda dividri en dos columnas*/
+  grid-template-columns: 1fr 1fr; /*Estas son las dos columnas*/
+  align-items: center; /*Esto es para alinear verticalmente el hero*/
+  gap: 2rem; /*Esto es pára que exista espacio de 2 rem entre las dos columnas*/
+}
+section {
+  padding: 0 8%;
+}
+.hero-text h5 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.hero-text h4 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.hero-text h1 {
+  font-family: "Roboto Mono", monospace;
+  font-size: 80px;
+  line-height: 1;
+  margin: 0 0 30px;
+}
+
+.hero-text p {
+  font-size: 100%;
+  margin-bottom: 40px;
+  line-height: 1.9;
+}
+
+.hero-img img {
+  width: 500px;
+  margin: 10% 0 0 10%;
+  height: auto;
+  transition: all 4s linear; /*Esto hace que la transicion sea lineal*/
+}
+.hero-img img:hover {
+  width: 550px;
+  opacity: 0.6;
+}
+
+.hero-text a {
+  display: inline-block; /*Estp permite que ls elementos sigan en linea pero que se les pueda ajustar el alineamineto tanto vertical como horizontal*/
+  background-color: #4d4d4d;
+  border: 1px solid transparent;
+  padding: 15px 30px;
+  line-height: 1.4;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+
+.hero-text a:hover {
+  background-color: transparent;
+  border: 1px solid white;
+  transform: translateX(8px);
+}
+.hero-text a.streams {
+  background-color: transparent;
+  border: 1px solid white;
+  margin-left: 20px;
+}
+
+.hero-text a.streams i {
+  vertical-align: middle;
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+.icons {
+  position: absolute;
+  top: 50vh;
+  padding: 0 3%;
+  transform: translateY(-50%);
+}
+.icons i {
+  display: block;
+  margin: 26px 0;
+  font-size: 24px;
+  transition: all 0.5s ease;
+}
+.icons i:hover {
+  color: #4d4d4d;
+  transform: translateY(-5px);
+}
+.scroll-down {
+  position: absolute;
+  bottom: 6%;
+  right: 3%;
+}
+.scroll-down i {
+  display: block;
+  padding: 12px;
+  font-size: 30px;
+  background-color: #4d4d4d;
+  border-radius: 30px;
+  transition: all 0.5s ease;
+}
+.scroll-down i:hover {
+  transform: translateY(-5px);
+}
+
+/*aca vamos a hacer mediaqueries para que la web  sea responsive*/
+@media (max-width: 992px) {
+  section {
+    padding: 0 3%;
+    transition: 0.2s;
+  }
+
+  .hero-text {
+    padding-top: 0;
+  }
+
+  .hero-img {
+    text-align: center;
+    width: 80%;
+    margin: 10% 0 0 10%;
+  }
+
+  .hero-text p {
+    font-size: 70%;
+  }
+
+  .icons {
+    display: none;
+  }
+  .scroll-down {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-icon-action {
+    display: block;
+  }
+  #menu-icon {
+    display: block;
+  }
+
+  .hero-text {
+    text-align: center;
+    padding: 100px;
+  }
+
+  .hero-img img {
+    margin: 0;
+  }
+  .hero {
+    height: 100%;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  .navlist {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 200px;
+    height: 180px;
+    background-color: #2e0707e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    transition: all 0.5s ease-out;
+  }
+
+  .navlist a {
+    display: block;
+    margin: 7px 0;
+  }
+
+  #menu-toggle:checked + label.menu-icon-action + ul {
+    right: 0;
+  }
+
+  .hero-text a.streams {
+    margin-top: 15px;
+  }
+  .hero-img {
+    margin: 5% 0 0 5%;
+    text-align: center;
+  }
+
+  .icons {
+    position: relative;
+    top: -570px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
