@@ -271,7 +271,7 @@ section {
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 391px) {
   .menu-icon-action {
     display: block;
   }
@@ -335,11 +335,12 @@ section {
 
   .icons {
     position: relative;
-    top: -270px;
+    top: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    margin-top: 30px;
   }
   .hero-text h1 {
     font-size: 50px;
@@ -416,11 +417,12 @@ section {
 
   .icons {
     position: relative;
-    top: -270px;
+    top: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    margin-top: 30px;
   }
   .hero-text h1 {
     font-size: 50px;
